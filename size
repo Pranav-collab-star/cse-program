@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+int inttype;
+float flottype;
+double doubletype;
+char chartype;
+printf ("4bytes ",size of (inttype));
+printf("4bytes",size of (floattype));
+printf("8bytes",size of (doubletype));
+printf("1bytes",size of (chartype);
+}
+return 0;
