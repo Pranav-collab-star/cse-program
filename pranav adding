@@ -3,6 +3,6 @@ int main()
 {
 int (10,20),sum;
 sum=10+20;
-printf("the sum of two integers are :",sum)
+printf("the sum of two integers are :",sum);
+return 0;
 }
-return 0
