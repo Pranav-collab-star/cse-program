@@ -5,9 +5,13 @@ int inttype;
 float flottype;
 double doubletype;
 char chartype;
+scanf("%d", &inttype);
+scanf("%f", &floattype);
+scanf("%ld", &doubletype);
+scanf("%c", &chartype);
 printf ("4bytes ",size of (inttype));
 printf("4bytes",size of (floattype));
 printf("8bytes",size of (doubletype));
 printf("1bytes",size of (chartype);
-}
 return 0;
+}
