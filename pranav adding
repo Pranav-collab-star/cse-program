@@ -1,9 +1,10 @@
 #include<stdio.h>
 int main()
 {
-int ("%d" 10,20,sum);
-sanf("%d" & 10,20);
-sum="%d"+"%d";
-printf("the sum of two integers are :",sum);
-return 0;
+    int a,b;
+    scanf("%d",&a);
+    scanf("%d",&b);
+    a=a+b;
+    printf("the sum of two integers are :%d",a);
+    return 0;
 }
