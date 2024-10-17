@@ -1,0 +1,17 @@
+#include <stdio.h>
+void findMax(int *a, int *b, int **max) {
+    if (*a > *b) {
+        *max = a; // Point to a if a is greater
+    } else {
+        *max = b; // Point to b if b is greater
+    }
+}
+int main() {
+    int num1, num2;
+    int *maxPtr; // Pointer to hold the address of the maximum number
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    findMax(&num1, &num2, &maxPtr);
+    printf("The maximum of %d and %d is: %d\n", num1, num2, *maxPtr);
+    return 0;
+}
