@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define MAX 10 
+void inputMatrix(int matrix[MAX][MAX], int rows, int cols) {
+    printf("Enter elements of the matrix (%d x %d):\n", rows, cols);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+void multiplyMatrices(int first[MAX][MAX], int second[MAX][MAX], int result[MAX][MAX], int r1, int c1, int c2) {
+    for (int i = 0; i < r1; i++) {
+        for (int j = 0; j < c2; j++) {
+            result[i][j] = 0; 
+            for (int k = 0; k < c1; k++) {
+                result[i][j] += first[i][k] * second[k][j];
+            }
+        }
+    }
+}
+
+void printMatrix(int matrix[MAX][MAX], int rows, int cols) {
+    printf("Resulting matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int first[MAX][MAX], second[MAX][MAX], result[MAX][MAX];
+    int r1, c1, r2, c2;
+    printf("Enter rows and columns for the first matrix: ");
+    scanf("%d %d", &r1, &c1);
+    printf("Enter rows and columns for the second matrix: ");
+    scanf("%d %d", &r2, &c2);
+    if (c1 != r2) {
+        printf("Matrix multiplication is not possible!\n");
+        return 1; 
+    }
+    inputMatrix(first, r1, c1);
+    inputMatrix(second, r2, c2);  
+    multiplyMatrices(first, second, result, r1, c1, c2);    
+    printMatrix(result, r1, c2);
+    return 0;
+}
