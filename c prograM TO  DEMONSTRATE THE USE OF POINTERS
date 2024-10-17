@@ -1,0 +1,31 @@
+#include <stdio.h>
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;       
+    *b = temp;     
+}
+void modifyArray(int *arr, int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i] += 5;
+    }
+}
+int main() {
+    int num1, num2;
+    printf("Enter two numbers: ");
+   scanf("%d %d", &num1, &num2);
+    printf("Original numbers: num1 = %d, num2 = %d\n", num1, num2);    
+    swap(&num1, &num2);
+    printf("After swapping: num1 = %d, num2 = %d\n", num1, num2);    
+    int arr[5];
+    printf("Enter 5 integers for the array: ");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }   
+    modifyArray(arr, 5);
+    printf("Array after modification:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
