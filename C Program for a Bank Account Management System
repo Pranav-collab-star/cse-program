@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+void deposit(double *balance, double amount) {
+    *balance += amount;
+}
+
+void withdraw(double *balance, double amount) {
+    if (*balance >= amount) *balance -= amount;
+    else printf("Insufficient balance.\n");
+}
+
+void displayBalance(double balance) {
+    printf("Current balance: $%.2f\n", balance);
+}
+
+int main() {
+    double balance = 0.0;
+    int choice;
+    double amount;
+
+    while (1) {
+        printf("1. Deposit\n2. Withdraw\n3. Balance Inquiry\n4. Exit\nChoose an option: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter amount to deposit: ");
+                scanf("%lf", &amount);
+                deposit(&balance, amount);
+                break;
+            case 2:
+                printf("Enter amount to withdraw: ");
+                scanf("%lf", &amount);
+                withdraw(&balance, amount);
+                break;
+            case 3:
+                displayBalance(balance);
+                break;
+            case 4:
+                return 0;
+            default:
+                printf("Invalid choice.\n");
+        }
+    }
+    return 0;
+}
