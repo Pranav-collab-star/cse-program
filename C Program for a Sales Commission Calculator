@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+double calculateCommission(double sales) {
+    if (sales < 1000) return sales * 0.05;
+    else if (sales <= 5000) return sales * 0.10;
+    else return sales * 0.20;
+}
+
+int main() {
+    double sales;
+    printf("Enter sales amount: ");
+    scanf("%lf", &sales);
+
+    printf("Commission earned: $%.2f\n", calculateCommission(sales));
+    return 0;
+}
