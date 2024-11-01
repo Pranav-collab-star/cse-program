@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *file;
+    char word[50], searchWord[50];
+    int count = 0;
+
+    printf("Enter the word to search for: ");
+    scanf("%s", searchWord);
+
+    file = fopen("sample.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    while (fscanf(file, "%s", word) != EOF) {
+        if (strcmp(word, searchWord) == 0) {
+            count++;
+        }
+    }
+
+    printf("The word '%s' occurs %d times in the file.\n", searchWord, count);
+    fclose(file);
+    return 0;
+}
