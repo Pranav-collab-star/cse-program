@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void startAdventure() {
+    printf("You are in a dark forest.\n");
+    printf("1. Move Forward\n2. Move Left\n3. Move Right\n");
+    int choice;
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("You encounter a wild animal and run back.\n");
+            break;
+        case 2:
+            printf("You find a hidden path that leads to a beautiful lake.\n");
+            break;
+        case 3:
+            printf("You fall into a pit. Game Over!\n");
+            break;
+        default:
+            printf("Invalid choice.\n");
+    }
+}
+
+int main() {
+    printf("Welcome to the Adventure Game!\n");
+    startAdventure();
+    return 0;
+}
