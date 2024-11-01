@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+void decimalToOctal(int num) {
+    if (num > 7) {
+        decimalToOctal(num / 8);
+    }
+    printf("%d", num % 8);
+}
+
+int main() {
+    int num = 65;
+    printf("Octal representation of %d is: ", num);
+    decimalToOctal(num);
+    printf("\n");
+    return 0;
+}
