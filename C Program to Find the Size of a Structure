@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+struct Person {
+    char name[50];
+    int age;
+    float height;
+};
+
+int main() {
+    printf("Size of struct Person: %lu bytes\n", sizeof(struct Person));
+    return 0;
+}
