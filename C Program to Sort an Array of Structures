@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    char name[50];
+    int marks;
+};
+
+void sort(struct Student arr[], int n) {
+    struct Student temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i].marks < arr[j].marks) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    struct Student students[] = {{"Alice", 85}, {"Bob", 90}, {"Charlie", 80}};
+    int n = sizeof(students) / sizeof(students[0]);
+
+    sort(students, n);
+
+    printf("Sorted list of students by marks:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Name: %s, Marks: %d\n", students[i].name, students[i].marks);
+    }
+    return 0;
+}
